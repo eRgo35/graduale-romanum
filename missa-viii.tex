@@ -23,12 +23,12 @@
 \setlength{\parskip}{0pt}
 \pagestyle{plain}
 
-% \chant{Latin title}{Polish title}{mode / source line}
+% \chant{Latin title}{mode}
 \titleformat{\section}{\centering\Large\scshape}{}{0pt}{}
 \titlespacing*{\section}{0pt}{1.8ex plus 1ex}{0.3ex}
-\newcommand{\chant}[3]{%
+\newcommand{\chant}[2]{%
   \section{\foreignlanguage{latin}{#1}}%
-  {\centering\small\itshape #2\quad\textcolor{rubric}{·}\quad #3\par}%
+  {\centering\small\itshape #2\par}%
   \vspace{0.8ex}}
 
 % Parallel text: Latin left, Polish right, one row per sung phrase.
@@ -57,36 +57,26 @@
    tłumaczenie polskie wg Mszału rzymskiego dla diecezji polskich}
 \end{center}
 
-\vspace{0.5ex}
-{\footnotesize\itshape
-Nuty bez ogonków: rytm swobodny, nuty czarne mniej więcej równe;
-nuta pusta — przedłużona (ok. dwukrotnie); kreska nad nutą — lekkie przedłużenie;
-\textup{rit.}~— zwolnić. Łuk obejmuje nuty śpiewane jednym tchem na jednej sylabie.
-Klucz z \textup{(8)}: głosy męskie śpiewają oktawę niżej niż zapis.
-Kreski: krótka u góry — krótki oddech; półkreska — oddech; pełna — koniec frazy;
-podwójna — koniec części.
-\rubr{*}~— od tego miejsca śpiewają wszyscy (wcześniej kantor lub celebrans).\par}
-
 % ---------------------------------------------------------------------------
-\chant{Asperges me}{Pokropienie wodą}{tonus VII}
+\chant{Asperges me}{tonus VII}
 \lilypondfile{scores/asperges.ly}
 \begin{tekst}
 \w{Aspérges me, Dómine, hyssópo, et mundábor:}
-  {Pokropisz mnie hizopem, Panie, i stanę się czysty,}
+  {Pokrop mnie Panie hyzopem a stanę się czysty,}
 \w{lavábis me, et super nivem dealbábor.}
-  {obmyjesz mnie, a nad śnieg wybieleję.}
+  {obmyj mnie, a nad śnieg wybieleję.}
 \w{\rubr{Ps. 50.} Miserére mei, Deus, secúndum magnam misericórdiam tuam.}
-  {\rubr{Ps. 51.} Zmiłuj się nade mną, Boże, według wielkiego miłosierdzia swego.}
+  {\rubr{Ps. 51.} Zmiłuj się nade mną, Boże, według wielkiego miłosierdzia Twego.}
 \w{Glória Patri, et Fílio, et Spirítui Sancto:}
-  {Chwała Ojcu i Synowi, i Duchowi Świętemu.}
+  {Chwała Ojcu, i Synowi, i Duchowi Świętemu,}
 \w{Sicut erat in princípio, et nunc, et semper, et in saécula saeculórum. Amen.}
-  {Jak była na początku, teraz i zawsze, i na wieki wieków. Amen.}
+  {jak była na początku, teraz i zawsze i na wieki wieków. Amen.}
 \w{\rubr{Powtarza się antyfonę} Aspérges me.}
-  {\rubr{Powtarza się antyfonę} Pokropisz mnie.}
+  {\rubr{Powtarza się antyfonę} Pokrop mnie.}
 \end{tekst}
 
 % ---------------------------------------------------------------------------
-\chant{Kyrie}{Panie, zmiłuj się}{tonus V}
+\chant{Kyrie}{tonus V}
 \lilypondfile{scores/kyrie.ly}
 \par\smallskip
 {\small\itshape\textcolor{rubric}{Jeśli Kyrie śpiewa się w tradycyjnej formie
@@ -100,7 +90,7 @@ dziewięciokrotnej, jako dziewiąte (ostatnie) wezwanie śpiewa się:}\par}
 
 \clearpage
 % ---------------------------------------------------------------------------
-\chant{Gloria}{Chwała na wysokości}{tonus V}
+\chant{Gloria}{tonus V}
 {\centering\small\rubr{Jeśli to możliwe, intonuje sam celebrans.}\par}
 \lilypondfile{scores/gloria.ly}
 \begin{tekst}
@@ -111,7 +101,7 @@ dziewięciokrotnej, jako dziewiąte (ostatnie) wezwanie śpiewa się:}\par}
 \w{Grátias ágimus tibi propter magnam glóriam tuam.}
   {Dzięki Ci składamy, bo wielka jest chwała Twoja.}
 \w{Dómine Deus, Rex caeléstis, Deus Pater omnípotens.}
-  {Panie Boże, Królu nieba, Boże Ojcze wszechmogący.}
+  {Panie Boże, Królu nieba, Boże, Ojcze wszechmogący.}
 \w{Dómine Fili unigénite, Jesu Christe.}
   {Panie, Synu Jednorodzony, Jezu Chryste.}
 \w{Dómine Deus, Agnus Dei, Fílius Patris.}
@@ -119,7 +109,7 @@ dziewięciokrotnej, jako dziewiąte (ostatnie) wezwanie śpiewa się:}\par}
 \w{Qui tollis peccáta mundi, miserére nobis.}
   {Który gładzisz grzechy świata, zmiłuj się nad nami.}
 \w{Qui tollis peccáta mundi, súscipe deprecatiónem nostram.}
-  {Który gładzisz grzechy świata, przyjm błagania nasze.}
+  {Który gładzisz grzechy świata, przyjm błaganie nasze.}
 \w{Qui sedes ad déxteram Patris, miserére nobis.}
   {Który siedzisz po prawicy Ojca, zmiłuj się nad nami.}
 \w{Quóniam tu solus sanctus. Tu solus Dóminus.}
@@ -132,7 +122,7 @@ dziewięciokrotnej, jako dziewiąte (ostatnie) wezwanie śpiewa się:}\par}
 
 \clearpage
 % ---------------------------------------------------------------------------
-\chant{Sanctus}{Święty}{tonus VI}
+\chant{Sanctus}{tonus VI}
 \lilypondfile{scores/sanctus.ly}
 \begin{tekst}
 \w{Sanctus, Sanctus, Sanctus Dóminus Deus Sábaoth.}
@@ -146,7 +136,7 @@ dziewięciokrotnej, jako dziewiąte (ostatnie) wezwanie śpiewa się:}\par}
 \end{tekst}
 
 % ---------------------------------------------------------------------------
-\chant{Agnus Dei}{Baranku Boży}{tonus VI}
+\chant{Agnus Dei}{tonus VI}
 \lilypondfile{scores/agnus.ly}
 \begin{tekst}
 \w{Agnus Dei, qui tollis peccáta mundi: miserére nobis.}
@@ -158,11 +148,14 @@ dziewięciokrotnej, jako dziewiąte (ostatnie) wezwanie śpiewa się:}\par}
 \end{tekst}
 
 % ---------------------------------------------------------------------------
-\chant{Ite, missa est}{Rozesłanie}{tonus V}
+\chant{Ite, missa est}{tonus V}
 \lilypondfile{scores/ite.ly}
 \begin{tekst}
 \w{\V Ite, missa est.}{\V Idźcie w pokoju Chrystusa.}
 \w{\R Deo grátias.}{\R Bogu niech będą dzięki.}
 \end{tekst}
+
+\vfill
+{\centering\itshape + Ad maiorem Dei gloriam +\par}
 
 \end{document}

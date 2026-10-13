@@ -135,7 +135,7 @@ melody = \chantMusic c' {
 }
 
 words = \lyricmode {
-  "A" -- "sper" -- "ges" __ "me," "* Dó" -- "mi" -- "ne," __ "hys" -- "só" -- "po," __ "et" __ "mun" -- "dá" -- "bor:" "la" -- "vá" -- "bis" __ "me," "et" __ "su" -- "per" "ni" -- "vem" __ "de" -- "al" -- "bá" -- "bor." "Mi" -- "se" -- "ré" -- "re" "me" -- "i," "De" -- "us, *" __ "se" -- "cún" -- "dum" "ma" -- "gnam" "mi" -- "se" -- "ri" -- "cór" -- "di" -- "am" "tu" -- "am." __ "Gló" -- "ri" -- "a" "Pa" -- "tri," "et" "Fí" -- "li" -- "o," "et" "Spi" -- "rí" -- "tu" -- "i" "San" -- "cto: *" __ "Si" -- "cut" __ "e" -- "rat" "in" "prin" -- "cí" -- "pi" -- "o," "et" "nunc," __ "et" "sem" -- "per," __ "et" __ "in" __ "saé" -- "cu" -- "la" "sae" -- "cu" -- "ló" -- "rum." "A" -- "men." __
+  "A" -- "sper" -- "ges" __ "me," "* Dó" -- "mi" -- "ne," __ "hys" -- "só" -- "po," __ "et" __ "mun" -- "dá" -- "bor:" "la" -- "vá" -- "bis" __ "me," "et" __ "su" -- "per" "ni" -- "vem" __ "de" -- "al" -- "bá" -- "bor." "Mi" -- "se" -- "ré" -- "re" "me" -- "i," "De" -- "us, *" __ "se" -- "cún" -- "dum" "ma" -- "gnam" "mi" -- "se" -- "ri" -- "cór" -- "di" -- "am" "tu" -- "am." __ "Gló" -- "ri" -- "a" "Pa" -- "tri," "et" "Fí" -- "li" -- "o," "et" "Spi" -- "rí" -- "tu" -- "i" "San" -- "cto: *" __ "Sic" -- "ut" __ "e" -- "rat" "in" "prin" -- "cí" -- "pi" -- "o," "et" "nunc," __ "et" "sem" -- "per," __ "et" __ "in" __ "saé" -- "cu" -- "la" "sae" -- "cu" -- "ló" -- "rum." "A" -- "men." __
 }
 
 \chantScore \melody \words
