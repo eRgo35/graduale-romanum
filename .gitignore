@@ -1,0 +1,10 @@
+# LaTeX intermediates
+*.aux
+*.log
+
+# lyluatex score cache
+build-ly/
+
+# Python bytecode
+__pycache__/
+*.pyc

@@ -1,0 +1,12 @@
+name:Agnus Dei VIII;
+office-part:Kyriale;
+mode:6;
+book:Graduale Romanum, 1961, p. 31* & The Liber Usualis, 1961, p. 39 & Graduale Romanum, 1974, p. 740 & Vatican II Hymnal, 2011, p. 167;
+transcriber:Andrew Hinkley;
+commentary:XV. s.;
+% Slur groups ("/") and text follow the Vatican II Hymnal modern edition.
+% Pitches cross-checked against en.gregorianum.org/wiki/Missa_VIII_(Missa_de_Angelis).
+%%
+(c4) A(fggf)gnus(gh) De(f_[oh:h]g_[oh:h]f_[oh:h])i,(f.) (,) qui(f) tol(fd~)lis(dc) pec(d')cá(c)ta(df) mun(f_[oh:h]g_[oh:h]f_[oh:h])di :(f.) (;) mi(f)se(gh)ré(h)re(ixgi/H'Gh) no(f_[oh:h]g_[oh:h]f_[oh:h])bis.(f.) (::)
+A(f)gnus(hj) De(jvHG'j)i,(j.) (,) qui(j) tol(hgh)lis(f') pec(g)cá(f)ta(gh) mun(f_[oh:h]g_[oh:h]f_[oh:h])di :(f.) (;) mi(f)se(gh)ré(h)re(ixgi/H'Gh) no(f_[oh:h]g_[oh:h]f_[oh:h])bis.(f.) (::)
+A(fggf)gnus(gh) De(f_[oh:h]g_[oh:h]f_[oh:h])i,(f.) (,) qui(f) tol(fd~)lis(dc) pec(d')cá(c)ta(df) mun(f_[oh:h]g_[oh:h]f_[oh:h])di :(f.) (;) do(f)na(gh) no(h)bis(ixgi/H'Gh) pa(f_[oh:h]g_[oh:h]f_[oh:h])cem.(f.) (::)

@@ -1,0 +1,11 @@
+name:Sanctus VIII;
+office-part:Kyriale;
+mode:6;
+book:Graduale Romanum, 1961, p. 30* & The Liber Usualis, 1961, p. 38 & Graduale Romanum, 1974, p. 740 & Vatican II Hymnal, 2011, p. 166;
+transcriber:Andrew Hinkley;
+commentary:(XI) XII. s.;
+% Slur groups ("/"), bars and text follow the Vatican II Hymnal modern edition.
+% Pitches cross-checked against en.gregorianum.org/wiki/Missa_VIII_(Missa_de_Angelis);
+% the bar after "venit" is a full bar here (a quarter bar there), as in the Hymnal.
+%%
+(c4) SAn(fghf/ggf~)ctus,(f.) (,) San(fe~)ctus,(dc..) (,) San(fghj/hhvG~F~)ctus(gf..) (;) Dó(ixfh/jij)mi(ih)nus(h.) De(j)us(ixih) Sá(gfgh/ffvD'C fghj/hhvGF)ba(gf)oth.(f.) (:) Ple(f)ni(hj) sunt(j.) cae(hgj)li(j.) et(jk~) ter(ixkvJI'j)ra(ih..) (,) gló(j)ri(ixih)a(gh) tu(hvGF)a.(f.) (:) Ho(f)sán(fe~)na(dc) in(f) ex(gh)cél(hj/hhvG~F~)sis.(gf..) (:) Be(f)ne(hj)dí(jvHG'j)ctus(j.) qui(jk) ve(ixkvJI'j)nit(ih..) (:) in(h') nó(h)mi(f')ne(h) Dó(jjk)mi(j)ni.(j.) (:) Ho(j)sán(ixjkkvJ/H'i)na(gf) (,) in(gh) ex(fe)cél(d_c fghj/hhvG~F~)sis.(gf..) (::)

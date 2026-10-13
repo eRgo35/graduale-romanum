@@ -1,0 +1,168 @@
+% Missa VIII "De Angelis" — modern notation, Latin text with Polish translation.
+% Build:  lualatex -shell-escape missa-viii.tex   (needs LilyPond >= 2.24 in PATH)
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[a4paper,top=15mm,bottom=18mm,left=20mm,right=20mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Libertinus Serif}
+\usepackage[latin,main=polish]{babel}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{paracol}
+\usepackage{titlesec}
+\usepackage[
+  program=lilypond,
+  staffsize=16,
+  includepaths={./,scores/},
+  pass-fonts,
+  tmpdir=build-ly,
+]{lyluatex}
+
+\definecolor{rubric}{RGB}{170,20,20}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{plain}
+
+% \chant{Latin title}{Polish title}{mode / source line}
+\titleformat{\section}{\centering\Large\scshape}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.8ex plus 1ex}{0.3ex}
+\newcommand{\chant}[3]{%
+  \section{\foreignlanguage{latin}{#1}}%
+  {\centering\small\itshape #2\quad\textcolor{rubric}{·}\quad #3\par}%
+  \vspace{0.8ex}}
+
+% Parallel text: Latin left, Polish right, one row per sung phrase.
+\newenvironment{tekst}
+  {\par\vspace{0.6ex}\small
+   \setcolumnwidth{0.48\textwidth,0.48\textwidth}%
+   \setlength{\columnsep}{0.04\textwidth}%
+   \begin{paracol}{2}}
+  {\end{paracol}\par\vspace{0.5ex}}
+% \w{Latin}{Polski}
+\newcommand{\w}[2]{%
+  \switchcolumn[0]*\foreignlanguage{latin}{#1}\par
+  \switchcolumn #2\par\vspace{0.3ex}}
+% Libertinus has no U+211F/U+2123: build the barred R and V.
+\newcommand{\barred}[1]{#1\kern-.48em\raisebox{.04em}{/}\kern.06em}
+\newcommand{\R}{\textcolor{rubric}{\barred{R}.}~}
+\newcommand{\V}{\textcolor{rubric}{\barred{V}.}~}
+\newcommand{\rubr}[1]{\textcolor{rubric}{\itshape #1}}
+
+\begin{document}
+
+\begin{center}
+  {\Huge\scshape Missa VIII}\par\smallskip
+  {\Large\itshape De Angelis}\par\smallskip
+  {\small Kyriale Romanum · zapis współczesny wg Vatican II Hymnal (2011)\\
+   tłumaczenie polskie wg Mszału rzymskiego dla diecezji polskich}
+\end{center}
+
+\vspace{0.5ex}
+{\footnotesize\itshape
+Nuty bez ogonków: rytm swobodny, nuty czarne mniej więcej równe;
+nuta pusta — przedłużona (ok. dwukrotnie); kreska nad nutą — lekkie przedłużenie;
+\textup{rit.}~— zwolnić. Łuk obejmuje nuty śpiewane jednym tchem na jednej sylabie.
+Klucz z \textup{(8)}: głosy męskie śpiewają oktawę niżej niż zapis.
+Kreski: krótka u góry — krótki oddech; półkreska — oddech; pełna — koniec frazy;
+podwójna — koniec części.
+\rubr{*}~— od tego miejsca śpiewają wszyscy (wcześniej kantor lub celebrans).\par}
+
+% ---------------------------------------------------------------------------
+\chant{Asperges me}{Pokropienie wodą}{tonus VII}
+\lilypondfile{scores/asperges.ly}
+\begin{tekst}
+\w{Aspérges me, Dómine, hyssópo, et mundábor:}
+  {Pokropisz mnie hizopem, Panie, i stanę się czysty,}
+\w{lavábis me, et super nivem dealbábor.}
+  {obmyjesz mnie, a nad śnieg wybieleję.}
+\w{\rubr{Ps. 50.} Miserére mei, Deus, secúndum magnam misericórdiam tuam.}
+  {\rubr{Ps. 51.} Zmiłuj się nade mną, Boże, według wielkiego miłosierdzia swego.}
+\w{Glória Patri, et Fílio, et Spirítui Sancto:}
+  {Chwała Ojcu i Synowi, i Duchowi Świętemu.}
+\w{Sicut erat in princípio, et nunc, et semper, et in saécula saeculórum. Amen.}
+  {Jak była na początku, teraz i zawsze, i na wieki wieków. Amen.}
+\w{\rubr{Powtarza się antyfonę} Aspérges me.}
+  {\rubr{Powtarza się antyfonę} Pokropisz mnie.}
+\end{tekst}
+
+% ---------------------------------------------------------------------------
+\chant{Kyrie}{Panie, zmiłuj się}{tonus V}
+\lilypondfile{scores/kyrie.ly}
+\par\smallskip
+{\small\itshape\textcolor{rubric}{Jeśli Kyrie śpiewa się w tradycyjnej formie
+dziewięciokrotnej, jako dziewiąte (ostatnie) wezwanie śpiewa się:}\par}
+\lilypondfile{scores/kyrie-ix.ly}
+\begin{tekst}
+\w{Kýrie, eléison. Christe, eléison. Kýrie, eléison.}
+  {Panie, zmiłuj się nad nami. Chryste, zmiłuj się nad nami.
+   Panie, zmiłuj się nad nami.}
+\end{tekst}
+
+\clearpage
+% ---------------------------------------------------------------------------
+\chant{Gloria}{Chwała na wysokości}{tonus V}
+{\centering\small\rubr{Jeśli to możliwe, intonuje sam celebrans.}\par}
+\lilypondfile{scores/gloria.ly}
+\begin{tekst}
+\w{Glória in excélsis Deo.}{Chwała na wysokości Bogu,}
+\w{Et in terra pax homínibus bonae voluntátis.}{a na ziemi pokój ludziom dobrej woli.}
+\w{Laudámus te. Benedícimus te. Adorámus te. Glorificámus te.}
+  {Chwalimy Cię. Błogosławimy Cię. Wielbimy Cię. Wysławiamy Cię.}
+\w{Grátias ágimus tibi propter magnam glóriam tuam.}
+  {Dzięki Ci składamy, bo wielka jest chwała Twoja.}
+\w{Dómine Deus, Rex caeléstis, Deus Pater omnípotens.}
+  {Panie Boże, Królu nieba, Boże Ojcze wszechmogący.}
+\w{Dómine Fili unigénite, Jesu Christe.}
+  {Panie, Synu Jednorodzony, Jezu Chryste.}
+\w{Dómine Deus, Agnus Dei, Fílius Patris.}
+  {Panie Boże, Baranku Boży, Synu Ojca.}
+\w{Qui tollis peccáta mundi, miserére nobis.}
+  {Który gładzisz grzechy świata, zmiłuj się nad nami.}
+\w{Qui tollis peccáta mundi, súscipe deprecatiónem nostram.}
+  {Który gładzisz grzechy świata, przyjm błagania nasze.}
+\w{Qui sedes ad déxteram Patris, miserére nobis.}
+  {Który siedzisz po prawicy Ojca, zmiłuj się nad nami.}
+\w{Quóniam tu solus sanctus. Tu solus Dóminus.}
+  {Albowiem tylko Tyś jest święty. Tylko Tyś jest Panem.}
+\w{Tu solus Altíssimus, Jesu Christe.}
+  {Tylko Tyś Najwyższy, Jezu Chryste.}
+\w{Cum Sancto Spíritu, in glória Dei Patris. Amen.}
+  {Z Duchem Świętym w chwale Boga Ojca. Amen.}
+\end{tekst}
+
+\clearpage
+% ---------------------------------------------------------------------------
+\chant{Sanctus}{Święty}{tonus VI}
+\lilypondfile{scores/sanctus.ly}
+\begin{tekst}
+\w{Sanctus, Sanctus, Sanctus Dóminus Deus Sábaoth.}
+  {Święty, Święty, Święty, Pan Bóg Zastępów.}
+\w{Pleni sunt caeli et terra glória tua.}
+  {Pełne są niebiosa i ziemia chwały Twojej.}
+\w{Hosánna in excélsis.}{Hosanna na wysokości.}
+\w{Benedíctus qui venit in nómine Dómini.}
+  {Błogosławiony, który idzie w imię Pańskie.}
+\w{Hosánna in excélsis.}{Hosanna na wysokości.}
+\end{tekst}
+
+% ---------------------------------------------------------------------------
+\chant{Agnus Dei}{Baranku Boży}{tonus VI}
+\lilypondfile{scores/agnus.ly}
+\begin{tekst}
+\w{Agnus Dei, qui tollis peccáta mundi: miserére nobis.}
+  {Baranku Boży, który gładzisz grzechy świata, zmiłuj się nad nami.}
+\w{Agnus Dei, qui tollis peccáta mundi: miserére nobis.}
+  {Baranku Boży, który gładzisz grzechy świata, zmiłuj się nad nami.}
+\w{Agnus Dei, qui tollis peccáta mundi: dona nobis pacem.}
+  {Baranku Boży, który gładzisz grzechy świata, obdarz nas pokojem.}
+\end{tekst}
+
+% ---------------------------------------------------------------------------
+\chant{Ite, missa est}{Rozesłanie}{tonus V}
+\lilypondfile{scores/ite.ly}
+\begin{tekst}
+\w{\V Ite, missa est.}{\V Idźcie w pokoju Chrystusa.}
+\w{\R Deo grátias.}{\R Bogu niech będą dzięki.}
+\end{tekst}
+
+\end{document}
