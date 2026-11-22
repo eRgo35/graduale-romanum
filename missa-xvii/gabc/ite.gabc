@@ -1,0 +1,11 @@
+name:Ite XVII (= Ite XV);
+office-part:Kyriale;
+mode:4;
+book:Graduale Romanum, 1961, p. 53* & The Liber Usualis, 1961, p. 59 & Chants of the Church, 1956, p. 40;
+transcriber:Andrew Hinkley;
+% Mass XVII has no Ite of its own: "Ite, missa est cantatur ut in Missa XV"
+% (Graduale Romanum, 1961, p. 57*; The Liber Usualis, 1961, p. 62).  GregoBase 620.
+% Not in the Vatican II Hymnal; pitched in the Kyrie's key signature.
+%%
+(f3) I(e)te,(fh) mis(hg)sa(f) est.(g.) (::)
+<sp>R/</sp>. De(e)o(fh) grá(hg)ti(f)as.(g.) (::)

@@ -1,0 +1,14 @@
+name:Agnus Dei I;
+office-part:Kyriale;
+mode:4;
+book:Graduale Romanum, 1961, p. 7* & The Liber Usualis, 1961, p. 18 & Graduale Romanum, 1974, p. 714 & Vatican II Hymnal, 2011, p. 162;
+transcriber:Andrew Hinkley;
+commentary:X. s.;
+% Slur groups ("/"), bars and text follow the Vatican II Hymnal modern edition:
+% the long melisma on "miserére"/"nobis" is slurred (A B G)(G F A)(C D C B),
+% the asterisk stands before "qui", and the horizontal episemas (no tenuto in
+% the Hymnal) are dropped.
+%%
+(c3) A(g)gnus(fgFE') De(e)i,(gi) (,) *qui(i) tol(ij)lis(i') pec(i)cá(ih)ta(ij) mun(ivH~G~)di :(g.) (;) mi(e)se(fh)ré(ghf/feg./ijI'H)re(i) no(ivHG)bis.(g.) (::)
+A(g)gnus(fgFE') De(e)i,(gi) (,) *qui(i) tol(ij)lis(i') pec(i)cá(ih)ta(ij) mun(ivH~G~)di :(g.) (;) mi(e)se(fh)ré(ghf/feg./ijI'H)re(i) no(ivHG)bis.(g.) (::)
+A(g)gnus(fgFE') De(e)i,(gi) (,) *qui(i) tol(ij)lis(i') pec(i)cá(ih)ta(ij) mun(ivH~G~)di :(g.) (;) do(e)na(fh) no(ghf/feg./ijI'H)bis(i) pa(ivHG)cem.(g.) (::)

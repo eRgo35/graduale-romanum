@@ -4,7 +4,8 @@
 Usage: gabc2ly.py [options] input.gabc output.ly
   --do PITCH         sounding LilyPond pitch of the chant "do" (default c' = middle C;
                      the treble_(8) clef prints it an octave higher)
-  --key-flat         print the one-flat key signature (transposed with the music)
+  --key-flat         print the one-flat key signature (transposed with the music);
+                     without it the C-major signature is printed, transposed too
   --intonation       italic lyrics up to the first double bar (celebrant's intonation)
   --break-sections   start a new line after every double bar (::)
   --continued        end with a double bar instead of a final bar (another
@@ -19,11 +20,14 @@ Mapping (square notation -> modern transcription, Vatican II Hymnal style):
                                      consecutive long notes share a slur
   divisio , ; : ::                -> tick, half bar, full bar, double bar
                                      (the last double bar is a final bar)
-The clef line of the c-clef is C5 before transposition.  A flat (x) or natural
+The clef line of the c-clef is C5 before transposition; an f-clef marks the F
+below it.  A b-flat clef (cb3, fb3) flattens every b until a natural cancels it
+for the rest of the word/divisio scope.  A flat (x) or natural
 (y) lasts until the next divisio or the end of the word, as in chant books; its
 sign is printed on the first affected note only.
 Vertical episema, quilisma, oriscus, stropha, virga and liquescence are signs
-of the square notation and are rendered as plain notes.
+of the square notation and are rendered as plain notes; a bivirga or tri-
+stropha (hvv, hsss) gives one note per virga/stropha.
 """
 import argparse
 import re
@@ -35,8 +39,9 @@ BAR = {",": r"\bar " + "\"'\"", "`": r"\bar " + "\"'\"", ";": HALF_BAR,
 
 
 def note_name(step, octave, acc):
-    name = STEPS[step] + ("es" if acc == "x" else "") + ("!" if acc == "y" else "")
-    return name + ("'" * (octave - 3) if octave >= 3 else "," * (3 - octave))
+    name = STEPS[step] + ("es" if acc == "x" else "")
+    name += "'" * (octave - 3) if octave >= 3 else "," * (3 - octave)
+    return name + ("!" if acc == "y" else "")
 
 
 class Note:
@@ -49,6 +54,7 @@ class Note:
 class Piece:
     def __init__(self):
         self.c_index = None      # gabc letter index that carries C5
+        self.clef_flat = False   # b-flat clef: every b is flat by default
         self.accidentals = {}    # letter index -> 'x' | 'y'
         self.seen_flat = set()   # steps that were flattened earlier
         self.flat_shown = set()  # letter indices whose flat sign is printed in this scope
@@ -61,6 +67,8 @@ class Piece:
         rel = index - self.c_index
         step, octave = rel % 7, 5 + rel // 7
         acc = self.accidentals.get(index, "")
+        if not acc and self.clef_flat and step == 6:
+            acc = "x"
         hide = ""
         if acc == "x":
             self.seen_flat.add(step)
@@ -97,6 +105,14 @@ class Piece:
                     continue
                 groups[-1].append(Note(self.pitch(ord(low) - 97)))
                 i += 1
+                # bivirga/tristropha (hvv, hsss): each repeated sign is one
+                # more note of the same pitch
+                sign = code[i:i + 1]
+                if sign in ("v", "s"):
+                    while code[i + 1:i + 2] == sign:
+                        groups[-1].append(Note(self.pitch(ord(low) - 97)))
+                        i += 1
+                    i += 1
             elif ch in "/ ":
                 if groups[-1]:
                     groups.append([])
@@ -189,14 +205,16 @@ def convert(src, break_sections=False, intonation=False):
         new_word = raw_text[:1].isspace()
         text, rubric, stars = split_text(raw_text)
 
-        clef = re.fullmatch(r"c([1-4])", code)
+        clef = re.fullmatch(r"([cf])(b?)([1-4])", code)
         if clef:
-            piece.c_index = 1 + 2 * int(clef.group(1))
+            line = 1 + 2 * int(clef.group(3))
+            piece.c_index = line if clef.group(1) == "c" else line + 4
+            piece.clef_flat = bool(clef.group(2))
             continue
         if re.fullmatch(r"[zZ][+-]?", code):
             piece.music.append(r"\break")
             continue
-        bar = re.fullmatch(r"(::|[,;:`])[0-9]?", code)
+        bar = re.fullmatch(r"(::|[,;:`])[0-9]?(?:[zZ][+-]?)?", code)
         if bar:
             piece.reset_accidentals()
             if stars:            # e.g. "*(:)" -- mark the preceding syllable
@@ -257,8 +275,7 @@ def to_ly(title, piece, source_name, do, key_flat):
         "",
         r"melody = \chantMusic %s {" % do,
     ]
-    if key_flat:
-        lines.append(r"  \key f \major")
+    lines.append(r"  \key f \major" if key_flat else r"  \key c \major")
     lines += ["  " + t for t in piece.music]
     lines += ["}", "", r"words = \lyricmode {"]
     lines += ["  " + " ".join(piece.lyrics)]

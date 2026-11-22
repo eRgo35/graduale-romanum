@@ -1,0 +1,20 @@
+name:Kyrie IX;
+office-part:Kyriale;
+mode:1;
+book:Graduale Romanum, 1961, p. 32* & The Liber Usualis, 1961, p. 40 & Graduale Romanum, 1974, p. 741 & Vatican II Hymnal, 2011, p. 168;
+transcriber:Andrew Hinkley;
+commentary:XII. s.;
+% Ninefold form as in the Vatican II Hymnal; slur groups ("/"), asterisks and
+% text follow its modern edition (GregoBase 2976); the * and ** of the ninth
+% invocation are dropped, as the converter can only attach them to the syllable "e".
+% Pitches cross-checked against GregoBase 19436 (English adaptation of the same melody).
+%%
+(c4) KY(df/gh)ri(gf)e(e[ll:1]d..fvDC'd) *e(cd)lé(fg)i(f)son.(e[ll:1]d..) (::)
+Ky(a)ri(cd)e(d.fvDC'd) e(cd)lé(fg)i(f)son.(e[ll:1]d..) (::)
+Ky(df/gh)ri(gf)e(e[ll:1]d..fvDC'd) e(cd)lé(fg)i(f)son.(e[ll:1]d..) (::)
+Chri(h)ste(ixhg/ivHG'g) e(f)lé(ixgi)i(g)son.(h.) (::)
+Chri(hvGF/gf)ste(e[ll:1]d..fvDC'd) e(cd)lé(fg)i(f)son.(e[ll:1]d..) (::)
+Chri(h)ste(ixhg/ivHG'g) e(f)lé(ixgi)i(g)son.(h.) (::)
+Ky(h)ri(jk)e(kv.jkh.1ixgh!ivHG'g) e(f)lé(ixgi)i(g)son.(h.) (::)
+Ky(hvGF)ri(gf)e(e[ll:1]d..fvDC'd) e(cd)lé(fg)i(f)son.(e[ll:1]d..) (::)
+Ky(h)ri(jk)e(kv.jkh.1ixgh!ivHG'F/ghh) (,) (hj!kv.jkh.1ixgh!ivHG'F/ghh) (,) (hvGF/gvFED.fvDC'd) e(cd)lé(fg)i(f)son.(e[ll:1]d..) (::)

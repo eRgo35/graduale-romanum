@@ -7,21 +7,25 @@ the Gloria.
 
 | Chant | Mode | gabc source |
 |---|---|---|
-| Asperges me | VII | `gabc/asperges.gabc` |
 | Kyrie (+ ninefold final invocation) | V | `gabc/kyrie.gabc`, `gabc/kyrie-ix.gabc` |
 | Gloria | V | `gabc/gloria.gabc` |
-| Credo III | V | `gabc/credo.gabc` |
+| Credo III | V | `../shared/gabc/credo-iii.gabc` |
 | Sanctus | VI | `gabc/sanctus.gabc` |
 | Agnus Dei | VI | `gabc/agnus.gabc` |
 | Ite, missa est | V | `gabc/ite.gabc` |
 
+The sprinkling rite (Asperges me I/II, Vidi aquam) before Mass, Credo III and
+the Marian antiphons after Mass are shared with the other booklets and live in
+`../shared/`.
+
 ## Layout
 
 - `gabc/`: square-notation sources from GregoBase.
-- `tools/gabc2ly.py`: gabc → LilyPond converter; run with `--help` for options.
-- `scores/`: generated `.ly` scores; `common.ily` holds the shared style.
+- `scores/`: generated `.ly` scores (style in `../shared/common.ily`).
 - `missa-viii.tex`: LuaLaTeX booklet embedding the scores via `lyluatex`.
 - `missa-viii.pdf`: built booklet.
+
+The converter is `../tools/gabc2ly.py`.
 
 ## Build
 

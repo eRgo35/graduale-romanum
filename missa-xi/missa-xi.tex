@@ -1,0 +1,101 @@
+% Missa XI "Orbis factor" — modern notation, Latin text with Polish translation.
+% Build:  lualatex -shell-escape missa-xi.tex   (needs LilyPond >= 2.24 in PATH)
+\input{../shared/booklet}
+
+\begin{document}
+
+\begin{center}
+  {\Huge\scshape Missa XI}\par\smallskip
+  {\Large\itshape Orbis factor}\par\smallskip
+  {\small Kyriale Romanum · zapis współczesny wg Vatican II Hymnal (2011)\\
+   tłumaczenie polskie wg Mszału rzymskiego dla diecezji polskich}
+\end{center}
+
+\input{../shared/before-mass}
+
+\clearpage
+% ---------------------------------------------------------------------------
+\chant{Kyrie}{tonus I}
+\lilypondfile{scores/kyrie.ly}
+\begin{tekst}
+\w{Kýrie, eléison. Christe, eléison. Kýrie, eléison.}
+  {Panie, zmiłuj się nad nami. Chryste, zmiłuj się nad nami.
+   Panie, zmiłuj się nad nami.}
+\end{tekst}
+
+\clearpage
+% ---------------------------------------------------------------------------
+\chant{Gloria}{tonus II}
+{\centering\small\rubr{Jeśli to możliwe, intonuje sam celebrans.}\par}
+\lilypondfile{scores/gloria.ly}
+\begin{tekst}
+\w{Glória in excélsis Deo.}{Chwała na wysokości Bogu,}
+\w{Et in terra pax homínibus bonae voluntátis.}{a na ziemi pokój ludziom dobrej woli.}
+\w{Laudámus te. Benedícimus te. Adorámus te. Glorificámus te.}
+  {Chwalimy Cię. Błogosławimy Cię. Wielbimy Cię. Wysławiamy Cię.}
+\w{Grátias ágimus tibi propter magnam glóriam tuam.}
+  {Dzięki Ci składamy, bo wielka jest chwała Twoja.}
+\w{Dómine Deus, Rex caeléstis, Deus Pater omnípotens.}
+  {Panie Boże, Królu nieba, Boże, Ojcze wszechmogący.}
+\w{Dómine Fili unigénite, Jesu Christe.}
+  {Panie, Synu Jednorodzony, Jezu Chryste.}
+\w{Dómine Deus, Agnus Dei, Fílius Patris.}
+  {Panie Boże, Baranku Boży, Synu Ojca.}
+\w{Qui tollis peccáta mundi, miserére nobis.}
+  {Który gładzisz grzechy świata, zmiłuj się nad nami.}
+\w{Qui tollis peccáta mundi, súscipe deprecatiónem nostram.}
+  {Który gładzisz grzechy świata, przyjm błaganie nasze.}
+\w{Qui sedes ad déxteram Patris, miserére nobis.}
+  {Który siedzisz po prawicy Ojca, zmiłuj się nad nami.}
+\w{Quóniam tu solus sanctus. Tu solus Dóminus.}
+  {Albowiem tylko Tyś jest święty. Tylko Tyś jest Panem.}
+\w{Tu solus Altíssimus, Jesu Christe.}
+  {Tylko Tyś Najwyższy, Jezu Chryste.}
+\w{Cum Sancto Spíritu, in glória Dei Patris. Amen.}
+  {Z Duchem Świętym w chwale Boga Ojca. Amen.}
+\end{tekst}
+
+\clearpage
+\input{../shared/credo-i}
+
+\clearpage
+% ---------------------------------------------------------------------------
+\chant{Sanctus}{tonus II}
+\lilypondfile{scores/sanctus.ly}
+\begin{tekst}
+\w{Sanctus, Sanctus, Sanctus Dóminus Deus Sábaoth.}
+  {Święty, Święty, Święty, Pan Bóg Zastępów.}
+\w{Pleni sunt caeli et terra glória tua.}
+  {Pełne są niebiosa i ziemia chwały Twojej.}
+\w{Hosánna in excélsis.}{Hosanna na wysokości.}
+\w{Benedíctus qui venit in nómine Dómini.}
+  {Błogosławiony, który idzie w imię Pańskie.}
+\w{Hosánna in excélsis.}{Hosanna na wysokości.}
+\end{tekst}
+
+% ---------------------------------------------------------------------------
+\chant{Agnus Dei}{tonus I}
+\lilypondfile{scores/agnus.ly}
+\begin{tekst}
+\w{Agnus Dei, qui tollis peccáta mundi: miserére nobis.}
+  {Baranku Boży, który gładzisz grzechy świata, zmiłuj się nad nami.}
+\w{Agnus Dei, qui tollis peccáta mundi: miserére nobis.}
+  {Baranku Boży, który gładzisz grzechy świata, zmiłuj się nad nami.}
+\w{Agnus Dei, qui tollis peccáta mundi: dona nobis pacem.}
+  {Baranku Boży, który gładzisz grzechy świata, obdarz nas pokojem.}
+\end{tekst}
+
+% ---------------------------------------------------------------------------
+\chant{Ite, missa est}{tonus I}
+\lilypondfile{scores/ite.ly}
+\begin{tekst}
+\w{\V Ite, missa est.}{\V Idźcie w pokoju Chrystusa.}
+\w{\R Deo grátias.}{\R Bogu niech będą dzięki.}
+\end{tekst}
+
+\input{../shared/after-mass}
+
+\vfill
+{\centering\itshape + Ad maiorem Dei gloriam +\par}
+
+\end{document}

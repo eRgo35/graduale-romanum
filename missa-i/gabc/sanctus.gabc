@@ -1,0 +1,12 @@
+name:Sanctus I;
+office-part:Kyriale;
+mode:4;
+book:Graduale Romanum, 1961, p. 6* & The Liber Usualis, 1961, p. 18 & Graduale Romanum, 1974, p. 714 & Vatican II Hymnal, 2011, p. 162;
+transcriber:Andrew Hinkley;
+commentary:X. s.;
+% Slur groups ("/"), bars and text follow the Vatican II Hymnal modern edition
+% (they agree with GregoBase here); the asterisk is placed before the second
+% "Sanctus" as in the Hymnal, and the horizontal episemas (no tenuto in the
+% Hymnal) are dropped.
+%%
+(c3) SAn(g)ctus,(fgFE.) (,) *San(e!fwg)ctus,(fgFE.) (,) San(e')ctus(g) Dó(i)mi(hi)nus(i.) De(i)us(ih) Sá(ij)ba(ivHG)oth.(g.) (:) Ple(fj'!kv)ni(j') sunt(j) cae(iih)li(i) et(iji) ter(g.)ra(g.) (,) gló(g!hw!ivHG')ri(f)a(fg) tu(fe)a.(e.) (:) Ho(e)sán(ei~)na(iih) in(i) ex(iji)cél(g.)sis.(g.) (:) Be(fj)ne(ji)dí(jk)ctus(j) qui(j) ve(ih)nit(i.) (,) in(i) nó(iih)mi(i)ne(iji) Dó(hg)mi(fg)ni.(g.) (:) Ho(g!hw!ivHG)sán(fg)na(fe) in(ei) ex(ih)cél(ijii)sis.(g.) (::)

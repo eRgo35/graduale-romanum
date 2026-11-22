@@ -1,0 +1,22 @@
+name:Kyrie I;
+office-part:Kyriale;
+mode:8;
+book:Graduale Romanum, 1961, p. 4* & The Liber Usualis, 1961, p. 16 & Vatican II Hymnal, 2011, p. 159;
+transcriber:Andrew Hinkley;
+commentary:X. s.;
+% GregoBase 1143 written out in full (nine invocations), as in the Hymnal.
+% Slur groups ("/"), bars and text follow the Vatican II Hymnal modern edition;
+% the horizontal episemas (no "rit." in the Hymnal) are dropped, and the
+% Hymnal's quarter bar after the first melisma of the last Kyrie is added
+% (a larger space "//" in the square-notation editions).
+% Pitches cross-checked against GregoBase 15890 (Graduale Romanum 1974).
+%%
+(c3) KY(ef!hv)ri(f)e(fh/hvGE) *e(fvED)lé(e')i(e)son.(c.) (::)
+Ky(ef!hv)ri(f)e(fh/hvGE) e(fvED)lé(e')i(e)son.(c.) (::)
+Ky(ef!hv)ri(f)e(fh/hvGE) e(fvED)lé(e')i(e)son.(c.) (::)
+Chri(hih)ste(gfh./fhg/edf.) (,) e(fg!hvGF'E)lé(c')i(d)son.(e.) (::)
+Chri(hih)ste(gfh./fhg/edf.) (,) e(fg!hvGF'E)lé(c')i(d)son.(e.) (::)
+Chri(hih)ste(gfh./fhg/edf.) (,) e(fg!hvGF'E)lé(c')i(d)son.(e.) (::)
+Ky(e.g!hw!iv)ri(h)e(iji/ig.) (,) e(ivHG'FE)lé(fgf')i(f)son.(e.) (::)
+Ky(e.g!hw!iv)ri(h)e(iji/ig.) (,) e(ivHG'FE)lé(fgf')i(f)son.(e.) (::)
+Ky(g)ri(fe)e(e.g!hw!iv) (,) (hi/ji/ig.) (,) *e(ivHG'FE)lé(fgf')i(f)son.(e.) (::)

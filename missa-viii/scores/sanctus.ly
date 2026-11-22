@@ -4,6 +4,7 @@
 \include "common.ily"
 
 melody = \chantMusic c' {
+  \key c \major
   f'4( \melisma g'4 a'4 f'4) g'4( g'4 f'4) \melismaEnd
   f'2
   \bar "'"

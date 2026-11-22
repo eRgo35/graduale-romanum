@@ -1,0 +1,73 @@
+% Missa XVII "In Dominicis Adventus et Quadragesimae" — modern notation,
+% Latin text with Polish translation.
+% Build:  lualatex -shell-escape missa-xvii.tex   (needs LilyPond >= 2.24 in PATH)
+\input{../shared/booklet}
+
+\begin{document}
+
+\begin{center}
+  {\Huge\scshape Missa XVII}\par\smallskip
+  {\Large\itshape In Dominicis Adventus et Quadragesimae}\par\smallskip
+  {\small Kyriale Romanum · zapis współczesny wg Vatican II Hymnal (2011)\\
+   tłumaczenie polskie wg Mszału rzymskiego dla diecezji polskich}
+\end{center}
+
+\input{../shared/before-mass}
+
+\clearpage
+% ---------------------------------------------------------------------------
+\chant{Kyrie}{tonus I}
+\lilypondfile{scores/kyrie.ly}
+\begin{tekst}
+\w{Kýrie, eléison. Christe, eléison. Kýrie, eléison.}
+  {Panie, zmiłuj się nad nami. Chryste, zmiłuj się nad nami.
+   Panie, zmiłuj się nad nami.}
+\end{tekst}
+
+{\centering\small\rubr{W Adwencie i Wielkim Poście nie śpiewa się Gloria.}\par}
+
+\clearpage
+\input{../shared/credo-i}
+
+\clearpage
+% ---------------------------------------------------------------------------
+\chant{Sanctus}{tonus V}
+\lilypondfile{scores/sanctus.ly}
+\begin{tekst}
+\w{Sanctus, Sanctus, Sanctus Dóminus Deus Sábaoth.}
+  {Święty, Święty, Święty, Pan Bóg Zastępów.}
+\w{Pleni sunt caeli et terra glória tua.}
+  {Pełne są niebiosa i ziemia chwały Twojej.}
+\w{Hosánna in excélsis.}{Hosanna na wysokości.}
+\w{Benedíctus qui venit in nómine Dómini.}
+  {Błogosławiony, który idzie w imię Pańskie.}
+\w{Hosánna in excélsis.}{Hosanna na wysokości.}
+\end{tekst}
+
+% ---------------------------------------------------------------------------
+\chant{Agnus Dei}{tonus V}
+\lilypondfile{scores/agnus.ly}
+\begin{tekst}
+\w{Agnus Dei, qui tollis peccáta mundi: miserére nobis.}
+  {Baranku Boży, który gładzisz grzechy świata, zmiłuj się nad nami.}
+\w{Agnus Dei, qui tollis peccáta mundi: miserére nobis.}
+  {Baranku Boży, który gładzisz grzechy świata, zmiłuj się nad nami.}
+\w{Agnus Dei, qui tollis peccáta mundi: dona nobis pacem.}
+  {Baranku Boży, który gładzisz grzechy świata, obdarz nas pokojem.}
+\end{tekst}
+
+% ---------------------------------------------------------------------------
+\chant{Ite, missa est}{tonus IV}
+\lilypondfile{scores/ite.ly}
+\begin{tekst}
+\w{\V Ite, missa est.}{\V Idźcie w pokoju Chrystusa.}
+\w{\R Deo grátias.}{\R Bogu niech będą dzięki.}
+\end{tekst}
+
+\clearpage
+\input{../shared/after-mass}
+
+\vfill
+{\centering\itshape + Ad maiorem Dei gloriam +\par}
+
+\end{document}

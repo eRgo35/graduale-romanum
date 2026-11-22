@@ -1,0 +1,21 @@
+name:Kyrie XVII;
+office-part:Kyriale;
+mode:1;
+book:Graduale Romanum, 1961, p. 55* & The Liber Usualis, 1961, p. 60 & Graduale Romanum, 1974, p. 764 (XVII B) & Vatican II Hymnal, 2011, p. 188;
+transcriber:Andrew Hinkley;
+commentary:(X) XV-XVII. s.;
+% Option 1 of the Vatican II Hymnal (GregoBase 272; Graduale Romanum 1974 "XVII B").
+% Written out nine-fold, as in the Hymnal.  Slur groups ("/"), bars and text follow the Hymnal.
+% Pitches cross-checked against GregoBase 8058 (Graduale Romanum 1974, p. 764).
+% "e" of the last Kyrie melody: the opening B is a plain note inside the slur, as in the Hymnal.
+% The * and ** of the last invocation are left out (the converter cannot place them).
+%%
+(c4) Ky(c)ri(df)e(evDC/dfdev.) (,) *e(efgvFE'D/cde)lé(f')i(e)son.(d.) (::)
+Ky(c)ri(df)e(evDC/dfdev.) (,) e(efgvFE'D/cde)lé(f')i(e)son.(d.) (::)
+Ky(c)ri(df)e(evDC/dfdev.) (,) e(efgvFE'D/cde)lé(f')i(e)son.(d.) (::)
+Chri(fghvGF)ste(ed.) (,) e(efgvFE'D/cde)lé(f')i(e)son.(d.) (::)
+Chri(fghvGF)ste(ed.) (,) e(efgvFE'D/cde)lé(f')i(e)son.(d.) (::)
+Chri(fghvGF)ste(ed.) (,) e(efgvFE'D/cde)lé(f')i(e)son.(d.) (::)
+Ky(h)ri(gh)e(hjkJ'IH.) e(jvIH/ghi)lé(j')i(i)son.(h.) (::)
+Ky(h)ri(gh)e(hjkJ'IH.) e(jvIH/ghi)lé(j')i(i)son.(h.) (::)
+Ky(h)ri(gh)e(hjkJ'IH./jvIH/g/ijh.) (,) (hgh/jkJ'IH./jvIH/g/ijh.) (,) e(ixhg/hiHG'g/efE'D/cde)lé(f')i(e)son.(d.) (::)

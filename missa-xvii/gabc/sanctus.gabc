@@ -1,0 +1,11 @@
+name:Sanctus XVII;
+office-part:Kyriale;
+mode:5;
+book:Graduale Romanum, 1961, p. 56* & The Liber Usualis, 1961, p. 61 & Graduale Romanum, 1974, p. 765 & Vatican II Hymnal, 2011, p. 189;
+transcriber:Andrew Hinkley;
+commentary:XI. s.;
+% Slur groups ("/"), bars and text follow the Vatican II Hymnal modern edition;
+% horizontal episemas dropped (the Hymnal has no "rit." here).
+% Bivirga on "-na" (hvv) written out as two notes (h/h) for the converter.
+%%
+(c3) San(hhf/fe~)ctus,(d.) *(,) San(df/hhi)ctus,(h.) (,) San(hhf/fe~)ctus(d.) (,) Dó(f)mi(d')nus(f) De(hhi)us(h.) Sá(h!iw!jkI'H)ba(ih)oth.(h.) (:) Ple(h')ni(gxg) sunt(gxfgh) cae(gxhvGE')li(f) et(ef) ter(ded)ra(d.) (,) gló(d)ri(fe)a(eh) tu(hih)a.(h.) (:) Ho(h!iw!jkI'H)sán(ih~)na(gxfgh/hGE') in(f) ex(ef)cél(ded)sis.(d.) (:) Be(d)ne(fe)dí(eh)ctus(h') qui(h) ve(hi)nit(h.) (,) in(d) nó(fe)mi(eh)ne(h) Dó(hi)mi(h)ni.(h.) (:) Ho(h!iw!jkI'H)sán(ih~)na(gxfgh/hGE') in(f) ex(ef)cél(ded)sis.(d.) (::)

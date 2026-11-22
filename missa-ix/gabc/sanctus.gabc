@@ -1,0 +1,10 @@
+name:Sanctus IX;
+office-part:Kyriale;
+mode:5;
+book:Graduale Romanum, 1961, p. 34* & The Liber Usualis, 1961, p. 42 & Graduale Romanum, 1974, p. 743 & Vatican II Hymnal, 2011, pp. 171-172;
+transcriber:Andrew Hinkley;
+% Slur groups ("/"), bars and text follow the Vatican II Hymnal modern edition
+% (GregoBase 587); the bar after "tua" is a full bar here (a half bar there), as in the Hymnal.
+% Pitches cross-checked against GregoBase 4632 (forma ordinaria).
+%%
+(c3) SAn(hhf/fd/efe)ctus,(d.) *(,) San(ffe)ctus,(d.) (,) San(df/hh/kvJI'j)ctus(ih..) (,) Dó(k')mi(j)nus(ij) De(kvJI)us(h.) Sá(gxfd/gvFE'f)ba(e[ll:1]d)oth.(d.) (:) Ple(f)ni(fe) sunt(d') cae(e)li(f') et(h) ter(iji/ih~)ra(h.) (,) gló(k)ri(ji)a(hf) tu(gxgvFE)a.(e[ll:1]d..) (:) Ho(f)sán(hih)na(hh) in(f') ex(d)cél(efe)sis.(e[ll:1]d..) (:) Be(kvJI'j)ne(h)dí(ij)ctus(j.) qui(ij) ve(kvJI)nit(h.) (,) in(k) nó(jvIH/ij)mi(ih)ne(h.) Dó(gxfd/gvFE'f)mi(e[ll:1]d)ni.(d.) (:) Ho(gxde/fd//ef!gvFEfv.df)sán(hhi)na(h.) (,) in(k) ex(jvIH)cél(fvED.fhf/ded)sis.(d.) (::)

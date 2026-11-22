@@ -1,0 +1,11 @@
+name:Sanctus XI;
+office-part:Kyriale;
+mode:2;
+book:Graduale Romanum, 1961, p. 40* & The Liber Usualis, 1961, p. 47 & Graduale Romanum, 1974, p. 750 & Vatican II Hymnal, 2011, p. 179;
+transcriber:Andrew Hinkley;
+commentary:XI. s.;
+% Slur groups ("/"), bars and text follow the Vatican II Hymnal modern edition;
+% the asterisk stands before the second "Sanctus", as there.
+% Pitches cross-checked against GregoBase 10799 (forma ordinaria) and 20185 (Graduale Romanum, 1908).
+%%
+(f3) SAn(fc/ef~)ctus,(f.) (,) *San(feg/gf~)ctus,(f.) (,) San(fg!hi)ctus(iji) Dó(hg)mi(fg)nus(g.) (,) De(gf)us(fgh) Sá(gf)ba(ef)oth.(f.) (:) Ple(ji)ni(hvGF) sunt(fi) cae(iji)li(hg) et(ef~) ter(fgff)ra(e.) (,) gló(ghi)ri(ih)a(ghg) tu(f.)a.(f.) (:) Ho(fj)sán(ij~)na(jvIH'GF.) in(e) ex(gfh/hf)cél(ef~)sis.(f.) (:) Be(e)ne(ef)dí(fg)ctus(f.) qui(ghi) ve(i_[oh:h]h)nit(g.) (,) in(fj/ji) nó(kxjkj')mi(i)ne(iji) Dó(hg)mi(fg)ni.(ghiG'F/gef.) (:) Ho(fj)sán(ij~)na(jvIH'GF.) in(e) ex(gfh/hf)cél(ef~)sis.(f.) (::)

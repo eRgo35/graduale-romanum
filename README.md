@@ -8,11 +8,26 @@ Polish translation.
 
 | Directory | Contents |
 |---|---|
-| [`missa-viii/`](missa-viii/) | Missa VIII *De Angelis*: Asperges me, Kyrie, Gloria, Credo III, Sanctus, Agnus Dei, Ite missa est |
+| [`missa-i/`](missa-i/) | Missa I *Lux et origo* (Eastertide): Kyrie, Gloria, Credo III, Sanctus, Agnus Dei, Ite missa est (+ paschal Ite with alleluia) |
+| [`missa-viii/`](missa-viii/) | Missa VIII *De Angelis*: Kyrie, Gloria, Credo III, Sanctus, Agnus Dei, Ite missa est |
+| [`missa-ix/`](missa-ix/) | Missa IX *Cum jubilo* (feasts of Our Lady): Kyrie, Gloria, Credo III, Sanctus, Agnus Dei, Ite missa est |
+| [`missa-xi/`](missa-xi/) | Missa XI *Orbis factor* (Sundays per annum): Kyrie, Gloria, Credo I, Sanctus, Agnus Dei, Ite missa est |
+| [`missa-xvii/`](missa-xvii/) | Missa XVII (Sundays of Advent and Lent): Kyrie, Credo I, Sanctus, Agnus Dei, Ite missa est |
+| [`shared/`](shared/) | Chants printed in every booklet: before Mass Asperges me (I and II) and Vidi aquam; after Mass the Marian antiphons Alma Redemptoris Mater, Ave Regina caelorum, Regina caeli and Salve Regina, each in the simple and the solemn tone. Also Credo I and III, the booklet preamble and the LilyPond style |
+| [`tools/`](tools/) | `gabc2ly.py`, the gabc → LilyPond converter (`--help` for options) |
 
-Each directory is self-contained: gabc sources, generated LilyPond scores,
-the booklet source and its own `Makefile`. Sources, transcribers and reference
-editions are credited in [`ATTRIBUTION.md`](ATTRIBUTION.md).
+Each `missa-*` directory holds its gabc sources, generated LilyPond scores,
+booklet source, built PDF and `Makefile`. Its booklet `\input`s the shared
+parts from `shared/`. Sources, transcribers and reference editions are
+credited in [`ATTRIBUTION.md`](ATTRIBUTION.md).
+
+## Build
+
+```sh
+make                 # build every booklet
+make -C missa-ix     # build one booklet (also regenerates shared scores)
+make clean
+```
 
 ## Requirements
 

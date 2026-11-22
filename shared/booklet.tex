@@ -1,0 +1,48 @@
+% Shared preamble of the Mass booklets: \input{../shared/booklet} first.
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[a4paper,top=15mm,bottom=18mm,left=20mm,right=20mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Libertinus Serif}
+\usepackage[latin,main=polish]{babel}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{paracol}
+\usepackage{titlesec}
+\usepackage[
+  program=lilypond,
+  staffsize=16,
+  includepaths={./,scores/,../shared/,../shared/scores/},
+  pass-fonts,
+  tmpdir=build-ly,
+]{lyluatex}
+
+\definecolor{rubric}{RGB}{170,20,20}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{plain}
+
+% \chant{Latin title}{mode}
+\titleformat{\section}{\centering\Large\scshape}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.8ex plus 1ex}{0.3ex}
+\newcommand{\chant}[2]{%
+  \section{\foreignlanguage{latin}{#1}}%
+  {\centering\small\itshape #2\par}%
+  \vspace{0.8ex}}
+
+% Parallel text: Latin left, Polish right, one row per sung phrase.
+\newenvironment{tekst}
+  {\par\vspace{0.6ex}\small
+   \setcolumnwidth{0.48\textwidth,0.48\textwidth}%
+   \setlength{\columnsep}{0.04\textwidth}%
+   \begin{paracol}{2}}
+  {\end{paracol}\par\vspace{0.5ex}}
+% \w{Latin}{Polski}
+\newcommand{\w}[2]{%
+  \switchcolumn[0]*\foreignlanguage{latin}{#1}\par
+  \switchcolumn #2\par\vspace{0.3ex}}
+% Libertinus has no U+211F/U+2123: build the barred R and V.
+\newcommand{\barred}[1]{#1\kern-.48em\raisebox{.04em}{/}\kern.06em}
+\newcommand{\R}{\textcolor{rubric}{\barred{R}.}~}
+\newcommand{\V}{\textcolor{rubric}{\barred{V}.}~}
+\newcommand{\rubr}[1]{\textcolor{rubric}{\itshape #1}}
