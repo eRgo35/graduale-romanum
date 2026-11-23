@@ -5,7 +5,8 @@
 The gabc sources come from [GregoBase](https://gregobase.selapa.net/), the
 database of Gregorian scores maintained by its community of transcribers and
 proofreaders. Each gabc file is based on the entry below; the original
-transcriber of every one is Andrew Hinkley. Abbreviations: GR = Graduale
+transcriber is Andrew Hinkley, except `missa-pro-defunctis/gabc/agnus.gabc`
+(Robert DeVet). Abbreviations: GR = Graduale
 Romanum, LU = Liber Usualis, CC = Chants of the Church, GM = Gregorian Missal,
 LC = Liber cantualis, V2H = Vatican II Hymnal.
 
@@ -59,6 +60,23 @@ LC = Liber cantualis, V2H = Vatican II Hymnal.
 | `agnus.gabc` | [Agnus Dei XVII (1137)](https://gregobase.selapa.net/chant.php?id=1137) | GR 1961 p. 57*; LU 1961 p. 61; GR 1974 p. 766; V2H 2011 p. 189 |
 | `ite.gabc` | [Ite XVII (= Ite XV) (620)](https://gregobase.selapa.net/chant.php?id=620) | GR 1961 p. 53*; LU 1961 p. 59; CC 1956 p. 40 |
 
+### `missa-pro-defunctis/gabc/`
+
+| File | GregoBase entry | Editions |
+|---|---|---|
+| `introitus.gabc` | [Requiem aeternam (Introitus) (766)](https://gregobase.selapa.net/chant.php?id=766) | GR 1961 p. 94*; LU 1961 p. 1807; CC 1956 p. 60 |
+| `kyrie.gabc` | [Kyrie (Missa pro defunctis) (541)](https://gregobase.selapa.net/chant.php?id=541) | GR 1961 p. 94*; LU 1961 p. 1807; CC 1956 p. 61; GR 1974 p. 767 (XVIII B); V2H 2011 p. 191 |
+| `graduale.gabc` | [Requiem aeternam (Graduale) (1261)](https://gregobase.selapa.net/chant.php?id=1261) | GR 1961 p. 95*; LU 1961 p. 1808; CC 1956 p. 61 |
+| `tractus.gabc` | [Absolve, Domine (Tractus) (338)](https://gregobase.selapa.net/chant.php?id=338) | GR 1961 p. 95*; LU 1961 p. 1809; CC 1956 p. 62 |
+| `sequentia.gabc` | [Dies irae (Sequentia) (1198)](https://gregobase.selapa.net/chant.php?id=1198) | GR 1961 p. 96*; LU 1961 p. 1810; CC 1956 p. 63 |
+| `offertorium.gabc` | [Domine Jesu Christe (Offertorium) (1199)](https://gregobase.selapa.net/chant.php?id=1199) | GR 1961 p. 100*; LU 1961 p. 1813; GR 1974 p. 674; CC 1956 p. 67 |
+| `sanctus.gabc` | [Sanctus (Missa pro defunctis = Sanctus XVIII) (298)](https://gregobase.selapa.net/chant.php?id=298) | GR 1961 p. 101*; GR 1961 p. 58*; LU 1961 p. 1814; LU 1961 p. 62; GR 1974 p. 767; CC 1956 p. 69; LC 1983 p. 26 |
+| `agnus.gabc` | [Agnus Dei (Missa pro defunctis) (2118)](https://gregobase.selapa.net/chant.php?id=2118) | GR 1961 p. 101*; LU 1961 p. 1815; CC 1956 p. 69 |
+| `communio.gabc` | [Lux aeterna (Communio) (241)](https://gregobase.selapa.net/chant.php?id=241) | GR 1961 p. 102*; LU 1961 p. 1815; CC 1956 p. 70 |
+| `requiescant.gabc` | [Requiescant in pace (823)](https://gregobase.selapa.net/chant.php?id=823) | GR 1961 p. 102*; LU 1961 p. 1815; CC 1956 p. 70 |
+| `libera.gabc` | [Libera me, Domine (Responsorium) (376)](https://gregobase.selapa.net/chant.php?id=376) | GR 1961 p. 102*; LU 1961 p. 1767; CC 1956 p. 70 |
+| `paradisum.gabc` | [In paradisum (Antiphona) (517)](https://gregobase.selapa.net/chant.php?id=517) | GR 1961 p. 109*; LU 1961 p. 1768; CC 1956 p. 73 |
+
 ### `shared/gabc/`
 
 | File | GregoBase entry | Editions |
@@ -100,7 +118,10 @@ LC = Liber cantualis, V2H = Vatican II Hymnal.
 - Latin: the Ordinary of the Mass, the sprinkling rite and the Marian
   antiphons as printed in the editions above.
 - Polish: *Mszał rzymski dla diecezji polskich*; the Marian antiphons in
-  common Polish translations.
+  common Polish translations. The Requiem propers, Libera me, In paradisum
+  and the Dies irae are the repository's own translations from the Latin
+  (CC0), checked against the Polish of the traditional bilingual missal
+  ([Missale Meum](https://www.missalemeum.com/pl/votive/defunctorum)).
 
 ## Software and fonts
 

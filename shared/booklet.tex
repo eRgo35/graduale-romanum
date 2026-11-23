@@ -17,7 +17,6 @@
   tmpdir=build-ly,
 ]{lyluatex}
 
-\definecolor{rubric}{RGB}{170,20,20}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \pagestyle{plain}
@@ -30,19 +29,15 @@
   {\centering\small\itshape #2\par}%
   \vspace{0.8ex}}
 
-% Parallel text: Latin left, Polish right, one row per sung phrase.
-\newenvironment{tekst}
-  {\par\vspace{0.6ex}\small
-   \setcolumnwidth{0.48\textwidth,0.48\textwidth}%
-   \setlength{\columnsep}{0.04\textwidth}%
-   \begin{paracol}{2}}
-  {\end{paracol}\par\vspace{0.5ex}}
-% \w{Latin}{Polski}
-\newcommand{\w}[2]{%
-  \switchcolumn[0]*\foreignlanguage{latin}{#1}\par
-  \switchcolumn #2\par\vspace{0.3ex}}
-% Libertinus has no U+211F/U+2123: build the barred R and V.
-\newcommand{\barred}[1]{#1\kern-.48em\raisebox{.04em}{/}\kern.06em}
-\newcommand{\R}{\textcolor{rubric}{\barred{R}.}~}
-\newcommand{\V}{\textcolor{rubric}{\barred{V}.}~}
-\newcommand{\rubr}[1]{\textcolor{rubric}{\itshape #1}}
+\newcommand{\tekstsize}{\small}
+\input{../shared/macros}
+
+% Credo and the Marian antiphons heading are printed in place in a booklet
+% (the Kyriale prints them in their own part).
+\newcommand{\credo}[1]{\clearpage\input{../shared/credo-#1}}
+\newcommand{\antiphonsheading}{%
+  \clearpage
+  \begin{center}
+    {\LARGE\scshape Antyfony maryjne}\par\smallskip
+    {\small\itshape śpiewane po Mszy świętej, według okresu roku liturgicznego}
+  \end{center}}

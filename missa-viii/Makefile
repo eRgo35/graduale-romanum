@@ -15,7 +15,7 @@ FLAGS_gloria   := $(MASS_V) --intonation
 FLAGS_ite      := $(MASS_V)
 FLAGS_agnus    := --break-sections
 
-missa-viii.pdf: missa-viii.tex $(SCORES) $(SHARED) build-ly/.common
+missa-viii.pdf: missa-viii.tex ordinarium.tex $(SCORES) $(SHARED) build-ly/.common
 	$(MAKE) -C ../shared
 	lualatex -shell-escape -interaction=nonstopmode -halt-on-error missa-viii.tex
 
@@ -28,7 +28,10 @@ build-ly/.common: ../shared/common.ily
 scores/%.ly: gabc/%.gabc ../tools/gabc2ly.py
 	python3 ../tools/gabc2ly.py $(FLAGS_$*) $< $@
 
+# Scores only (the Kyriale embeds them).
+scores: $(SCORES)
+
 clean:
 	rm -rf build-ly missa-viii.aux missa-viii.log missa-viii.pdf
 
-.PHONY: clean
+.PHONY: clean scores

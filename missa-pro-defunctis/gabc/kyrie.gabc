@@ -1,0 +1,22 @@
+name:Kyrie (Missa pro defunctis);
+office-part:Kyriale;
+mode:6;
+book:Graduale Romanum, 1961, p. 94* & The Liber Usualis, 1961, p. 1807 & Chants of the Church, 1956, p. 61 & Graduale Romanum, 1974, p. 767 (XVIII B) & Vatican II Hymnal, 2011, p. 191;
+transcriber:Andrew Hinkley;
+% GregoBase chant 541, written out nine-fold as in the Vatican II Hymnal (GregoBase
+% has iij./ij.).  Pitches identical to GregoBase 10377 (Graduale Romanum, 1974,
+% "Kyrie XVIII B").  Slur groups, bars, key and text follow the melody (top line)
+% of the Hymnal's organ accompaniment, p. 191; the asterisk stands before the
+% second "e" of the first and last invocation, as there.  The final long G of the
+% last "Ky-ri-e" melisma is slurred with the preceding C D C B-flat A in the
+% Hymnal; the converter cannot slur a long note with short ones, so it stands alone.
+%%
+(c4) Ky(ixfg!hi)ri(h)e(hg..) (,) *e(hvGF'Ef)lé(g)i(f)son.(f.) (::)
+Ky(ixfg!hi)ri(h)e(hg..) (,) e(hvGF'Ef)lé(g)i(f)son.(f.) (::)
+Ky(ixfg!hi)ri(h)e(hg..) (,) e(hvGF'Ef)lé(g)i(f)son.(f.) (::)
+Chri(ixfg!hi)ste(hg..) (,) e(hvGF'Ef)lé(g)i(f)son.(f.) (::)
+Chri(ixfg!hi)ste(hg..) (,) e(hvGF'Ef)lé(g)i(f)son.(f.) (::)
+Chri(ixfg!hi)ste(hg..) (,) e(hvGF'Ef)lé(g)i(f)son.(f.) (::)
+Ky(ixfg!hi)ri(h)e(hg..) (,) e(hvGF'Ef)lé(g)i(f)son.(f.) (::)
+Ky(ixfg!hi)ri(h)e(hg..) (,) e(hvGF'Ef)lé(g)i(f)son.(f.) (::)
+Ky(j)ri(f)e(ixf./ji/jkJ'IHG.) (,) *e(hvGF'Ef)lé(g)i(f)son.(f.) (::)

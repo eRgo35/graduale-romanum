@@ -8,3 +8,10 @@ build-ly/
 # Python bytecode
 __pycache__/
 *.pyc
+
+# LaTeX contents and index
+*.toc
+*.out
+*.idx
+*.ind
+*.ilg

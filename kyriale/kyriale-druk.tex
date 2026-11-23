@@ -1,0 +1,22 @@
+% kyriale.pdf imposed for saddle stitching: A4 landscape sheets, two A5 pages
+% per side in booklet order.  Print duplex (flip on the short edge), fold the
+% stack in half, staple on the fold, trim the fore-edge.
+%
+% Creep: the inner sheets of a folded stack stick out further at the
+% fore-edge, so trimming would cut more from the middle pages.  Each sheet's
+% pages are moved towards the spine by (sheet index from the outside) x
+% \creep, so every page keeps the same outer margin after trimming.  Set
+% \creep to the thickness of one sheet of paper: 80 g/m^2 is about 0.1 mm,
+% 100 g/m^2 about 0.12 mm.  Set it to 0 to switch the compensation off.
+\documentclass{article}
+\usepackage[paperwidth=297mm,paperheight=210mm,margin=0pt]{geometry}
+\usepackage{graphicx}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\newcommand{\creep}{0.1}   % mm per sheet
+
+\begin{document}
+\setlength{\unitlength}{1mm}
+\directlua{dofile("kyriale-druk.lua")}
+\end{document}

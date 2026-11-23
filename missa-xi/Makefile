@@ -15,7 +15,7 @@ FLAGS_sanctus   := --do "e'" --key-flat
 FLAGS_agnus     := --do "d'" --break-sections
 FLAGS_ite       := --do "c'" --key-flat
 
-missa-xi.pdf: missa-xi.tex $(SCORES) $(SHARED) build-ly/.common
+missa-xi.pdf: missa-xi.tex ordinarium.tex $(SCORES) $(SHARED) build-ly/.common
 	$(MAKE) -C ../shared
 	lualatex -shell-escape -interaction=nonstopmode -halt-on-error missa-xi.tex
 
@@ -28,7 +28,10 @@ build-ly/.common: ../shared/common.ily
 scores/%.ly: gabc/%.gabc ../tools/gabc2ly.py
 	python3 ../tools/gabc2ly.py $(FLAGS_$*) $< $@
 
+# Scores only (the Kyriale embeds them).
+scores: $(SCORES)
+
 clean:
 	rm -rf build-ly missa-xi.aux missa-xi.log missa-xi.pdf
 
-.PHONY: clean
+.PHONY: clean scores

@@ -1,0 +1,12 @@
+name:Agnus Dei (Missa pro defunctis);
+office-part:Kyriale;
+book:Graduale Romanum, 1961, p. 101* & The Liber Usualis, 1961, p. 1815 & Chants of the Church, 1956, p. 69;
+transcriber:Robert DeVet;
+% GregoBase chant 2118.  Pitches identical to Agnus XVIII, GregoBase 2412 (same
+% melody, "miserere nobis" / "dona nobis pacem"), apart from the added
+% "sempiternam".  The ** on the empty neume before "sempiternam" is moved onto
+% "sem-" (the converter drops a * without notes).
+%%
+(c4) A(g')gnus(g) De(gh)i,(h.) (,) * qui(h') tol(h)lis(h') pec(g)cá(h)ta(f') mun(g)di :(h.) (,) do(g')na(h) e(i')is(g) ré(h')qui(g)em.(g.) (::)
+A(g')gnus(g) De(gh)i,(h.) (,) * qui(h') tol(h)lis(h') pec(g)cá(h)ta(f') mun(g)di :(h.) (,) do(g')na(h) e(i')is(g) ré(h')qui(g)em.(g.) (::)
+A(g')gnus(g) De(gh)i,(h.) (,) * qui(h') tol(h)lis(h') pec(g)cá(h)ta(f') mun(g)di :(h.) (,) do(g')na(h) e(i')is(g) ré(h')qui(g)em(g') **sem(f)pi(h)tér(hg~)nam.(g.) (::)

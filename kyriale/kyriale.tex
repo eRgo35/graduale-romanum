@@ -1,0 +1,197 @@
+% Kyriale — every chant of the repository in one A5 book: sprinkling rite,
+% the Ordinary of Masses I, VIII, IX, XI and XVII, Credo I and III, Marian
+% antiphons, the Requiem; contents, running heads and an index of chants.
+% Build with `make` (lualatex, makeindex, lualatex twice; LilyPond in PATH).
+\documentclass[11pt,twoside,openany]{book}
+
+\usepackage[a5paper,top=11mm,bottom=13mm,inner=15mm,outer=11mm,
+            includehead,headheight=14pt,headsep=3mm,footskip=7mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Libertinus Serif}
+\usepackage[latin,main=polish]{babel}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{paracol}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\usepackage[
+  program=lilypond,
+  staffsize=14,
+  includepaths={./,../shared/,../shared/scores/},
+  pass-fonts,
+  tmpdir=build-ly,
+]{lyluatex}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\tekstsize}{\footnotesize}
+\input{../shared/macros}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\makeindex
+
+% --- running heads: part on the left page, Mass or chant on the right -----
+\pagestyle{fancy}
+\fancyhf{}
+% Heads come from macros, not marks (paracol upsets marks); both change only
+% right after a \clearpage, so a page never shows the next section's name.
+\newcommand{\headleft}{}
+\newcommand{\headright}{}
+\fancyhead[LE]{\footnotesize\scshape\headleft}
+\fancyhead[RO]{\footnotesize\scshape\headright}
+\fancyfoot[C]{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+% (plain is left as the class defines it: redefining it here wipes the fancy
+% heads once a page uses it)
+\addto\captionspolish{\renewcommand{\indexname}{Indeks}}
+
+% --- headings --------------------------------------------------------------
+% \dzial{Latin title}{Polish subtitle}: one of the four parts of the book.
+\newcommand{\currentmass}{}
+\newcommand{\masskey}{}
+\newif\ifdzialtop  % a part heading was just set: the first Mass shares its page
+\newcommand{\dzial}[2]{%
+  \clearpage
+  \thispagestyle{plain}%
+  \dzialtoptrue
+  \renewcommand{\currentmass}{}%
+  \gdef\headleft{#1}\gdef\headright{#1}%
+  \phantomsection\addcontentsline{toc}{part}{#1}%
+  \begin{center}
+    {\LARGE\scshape #1}\par\smallskip
+    {\small\itshape #2}\par
+  \end{center}
+  \vspace{1ex}}
+% \missa{number}{name}{sort key}{occasion}: a Mass within the Ordinarium.
+\newcommand{\missa}[4]{%
+  \ifdzialtop\dzialtopfalse\else\clearpage\fi
+  \renewcommand{\currentmass}{Missa #1}%
+  \renewcommand{\masskey}{#3}%
+  \phantomsection
+  \if\relax\detokenize{#2}\relax
+    \gdef\headright{Missa #1}%
+    \addcontentsline{toc}{chapter}{Missa #1}%
+    \index{Missa #3@Missa #1}%
+  \else
+    \gdef\headright{Missa #1 · #2}%
+    \addcontentsline{toc}{chapter}{Missa #1 \textit{#2}}%
+    \index{Missa #3@Missa #1 \textit{#2}}%
+    \index{#2|see{Missa #1}}%
+  \fi
+  \begin{center}
+    {\Large\scshape Missa #1}\par
+    \if\relax\detokenize{#2}\relax\else{\large\itshape #2}\par\fi
+    \if\relax\detokenize{#4}\relax\else{\small\itshape #4}\par\fi
+  \end{center}
+  \vspace{0.5ex}}
+% Contents and index titles, in the style of the part headings.
+\titleformat{\chapter}[block]{\centering\LARGE\scshape}{}{0pt}{}
+\titlespacing*{\chapter}{0pt}{0pt}{3ex}
+% \chant{Latin title}{mode}: one chant; listed in the contents and the index.
+\titleformat{\section}{\centering\large\scshape}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.6ex plus 1ex}{0.2ex}
+\newcommand{\chant}[2]{%
+  \section*{\foreignlanguage{latin}{#1}}%
+  \phantomsection\addcontentsline{toc}{section}{#1}%
+  \ifx\currentmass\empty
+    \index{#1}%
+  \else
+    \index{#1!Missa \masskey@\currentmass}%
+  \fi
+  {\centering\small\itshape #2\par}%
+  \vspace{0.6ex}}
+
+% Credo is printed once, in its own part; the Masses point to it.
+\newcommand{\credo}[1]{%
+  \par\nopagebreak[4]\vspace{1ex}\nopagebreak[4]
+  {\centering\small\rubr{Credo \MakeUppercase{#1} — zob. s.~\pageref{credo-#1}.}\par}}
+\newcommand{\antiphonsheading}{}
+
+% --- contents --------------------------------------------------------------
+\setcounter{tocdepth}{1}
+\titlecontents{part}[0pt]{\addvspace{1.2ex}\scshape}{}{}{\hfill\contentspage}
+\titlecontents{chapter}[1em]{\addvspace{0.4ex}}{}{}{\titlerule*[0.6em]{.}\contentspage}
+\titlecontents{section}[2.2em]{\small}{}{}{\titlerule*[0.6em]{.}\contentspage}
+
+\begin{document}
+\frontmatter
+% --- title page --------------------------------------------------------------
+\begin{titlepage}
+  \centering
+  \vspace*{20mm}
+  {\fontsize{38}{40}\selectfont\scshape Kyriale}\par\vspace{4mm}
+  {\Large\itshape Śpiewy stałe Mszy świętej}\par\vspace{14mm}
+  {\small Asperges me · Vidi aquam\\[0.4ex]
+   Missa I · VIII · IX · XI · XVII\\[0.4ex]
+   Credo I · III\\[0.4ex]
+   Antyfony maryjne\\[0.4ex]
+   Missa pro defunctis\par}
+  \vfill
+  {\footnotesize Kyriale Romanum · zapis współczesny wg Vatican II Hymnal (2011)\\
+   tłumaczenie polskie wg Mszału rzymskiego dla diecezji polskich\par}
+\end{titlepage}
+
+% --- verso of the title page -------------------------------------------------
+\thispagestyle{empty}
+\vspace*{\fill}
+{\footnotesize
+Zapis nutowy na podstawie GregoBase (gregobase.selapa.net); wysokość, łuki
+i podziały wg Vatican II Hymnal (Corpus Christi Watershed, 2011). Źródła
+i transkrybenci: plik ATTRIBUTION.md w repozytorium.\par\medskip
+Opracowanie przekazane do domeny publicznej (CC0 1.0). Teksty polskie wg
+\textit{Mszału rzymskiego dla diecezji polskich}.\par}
+\clearpage
+
+\gdef\headleft{Spis treści}\gdef\headright{Spis treści}
+\tableofcontents
+\clearpage
+
+\mainmatter
+% --- I. sprinkling rite ------------------------------------------------------
+\dzial{Ritus aspersionis}{Obrzęd pokropienia wodą święconą}
+\input{../shared/before-mass}
+
+% --- II. Ordinary of the Mass -------------------------------------------------
+\dzial{Ordinarium Missae}{Części stałe Mszy świętej}
+\missa{I}{Lux et origo}{01}{Tempore paschali · w okresie wielkanocnym}
+\input{../missa-i/ordinarium}
+\missa{VIII}{De Angelis}{08}{}
+\input{../missa-viii/ordinarium}
+\missa{IX}{Cum jubilo}{09}{In festis B. Mariae Virginis · w święta Najświętszej Maryi Panny}
+\input{../missa-ix/ordinarium}
+\missa{XI}{Orbis factor}{11}{In dominicis per annum · w niedziele w ciągu roku}
+\input{../missa-xi/ordinarium}
+\missa{XVII}{}{17}{In dominicis Adventus et Quadragesimae · w niedziele Adwentu i Wielkiego Postu}
+\input{../missa-xvii/ordinarium}
+
+% --- III. Credo ---------------------------------------------------------------
+\dzial{Credo}{Wyznanie wiary}
+\label{credo-i}
+\input{../shared/credo-i}
+\clearpage
+\label{credo-iii}
+\input{../shared/credo-iii}
+
+% --- IV. Marian antiphons -----------------------------------------------------
+\dzial{Antiphonae B. M. V.}{Antyfony maryjne, śpiewane po Mszy świętej według okresu roku liturgicznego}
+\input{../shared/after-mass}
+
+% --- V. Requiem ----------------------------------------------------------------
+\dzial{Missa pro defunctis}{Msza żałobna z obrzędem ostatniego pożegnania}
+\renewcommand{\currentmass}{Missa pro defunctis}%  index: chants listed under it
+\renewcommand{\masskey}{99}%
+\index{Missa 99@Missa pro defunctis}
+\input{../missa-pro-defunctis/ordinarium}
+
+\vfill
+{\centering\itshape + Ad maiorem Dei gloriam +\par}
+
+% --- index --------------------------------------------------------------------
+\backmatter
+\clearpage
+\gdef\headleft{Indeks}\gdef\headright{Indeks}
+\phantomsection\addcontentsline{toc}{part}{Indeks}
+{\small\printindex}
+
+\end{document}

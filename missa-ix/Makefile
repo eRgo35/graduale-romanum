@@ -17,7 +17,7 @@ FLAGS_sanctus := $(MASS_V)
 FLAGS_agnus   := $(MASS_V) --break-sections
 FLAGS_ite     := $(MASS_I)
 
-missa-ix.pdf: missa-ix.tex $(SCORES) $(SHARED) build-ly/.common
+missa-ix.pdf: missa-ix.tex ordinarium.tex $(SCORES) $(SHARED) build-ly/.common
 	$(MAKE) -C ../shared
 	lualatex -shell-escape -interaction=nonstopmode -halt-on-error missa-ix.tex
 
@@ -30,7 +30,10 @@ build-ly/.common: ../shared/common.ily
 scores/%.ly: gabc/%.gabc ../tools/gabc2ly.py
 	python3 ../tools/gabc2ly.py $(FLAGS_$*) $< $@
 
+# Scores only (the Kyriale embeds them).
+scores: $(SCORES)
+
 clean:
 	rm -rf build-ly missa-ix.aux missa-ix.log missa-ix.pdf
 
-.PHONY: clean
+.PHONY: clean scores
